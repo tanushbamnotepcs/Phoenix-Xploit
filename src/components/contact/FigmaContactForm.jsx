@@ -105,19 +105,20 @@ export function FigmaContactForm() {
           <div className="animate-pulse absolute top-1/2 left-1/2 w-1 h-1 bg-white rounded-full opacity-50"></div>
         </div>
         {/* Form container */}
-        <div className="relative w-full max-w-xl mx-auto bg-white/[0.06] backdrop-blur-[380px] border border-[#0A0D17]/10 rounded-[22px] p-[40px] shadow-xl shadow-cyan-900/20 z-10">
+        <div className="relative w-full max-w-5xl mx-auto bg-white/[0.06] px-10 py-[40px] rounded-[22px] border border-[#0A0D17]/10 backdrop-blur-[380px] shadow-xl shadow-cyan-900/20 z-10">
           <div className="space-y-10">
             {/* Form heading */}
-            <div className="space-y-2">
-              <h3 className="text-white font-semibold text-[30px] leading-tight tracking-tighter flex items-center gap-2">
+            <div className="flex flex-col items-center justify-center text-center py-4">
+              <h3 className="text-white font-semibold text-[28px] leading-tight tracking-tighter flex items-center justify-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-500 animate-pulse"></span>
                 Let&apos;s connect constellations
               </h3>
-              <p className="text-white/80 text-base tracking-tight max-w-[415px]">
+              <p className="text-white/80 text-base tracking-tight max-w-xl mx-auto mt-1">
                 Let&apos;s align our constellations! Reach out and let the magic of collaboration illuminate our skies.
               </p>
             </div>
-            
+
+
             {/* Form */}
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -129,9 +130,9 @@ export function FigmaContactForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          <Input 
-                            placeholder="First Name" 
-                            {...field} 
+                          <Input
+                            placeholder="First Name"
+                            {...field}
                             className="border-white/20 bg-white/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                           />
                         </FormControl>
@@ -145,9 +146,9 @@ export function FigmaContactForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          <Input 
-                            placeholder="Last Name" 
-                            {...field} 
+                          <Input
+                            placeholder="Last Name"
+                            {...field}
                             className="border-white/20 bg-white/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                           />
                         </FormControl>
@@ -156,7 +157,7 @@ export function FigmaContactForm() {
                     )}
                   />
                 </div>
-                
+
                 {/* Email */}
                 <FormField
                   control={form.control}
@@ -164,9 +165,9 @@ export function FigmaContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input 
-                          placeholder="Email" 
-                          {...field} 
+                        <Input
+                          placeholder="Email"
+                          {...field}
                           className="border-white/20 bg-white/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                         />
                       </FormControl>
@@ -174,7 +175,7 @@ export function FigmaContactForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 {/* Phone Number */}
                 <FormField
                   control={form.control}
@@ -182,9 +183,9 @@ export function FigmaContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input 
-                          placeholder="Phone Number" 
-                          {...field} 
+                        <Input
+                          placeholder="Phone Number"
+                          {...field}
                           className="border-white/20 bg-white/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                         />
                       </FormControl>
@@ -192,7 +193,7 @@ export function FigmaContactForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 {/* Message */}
                 <FormField
                   control={form.control}
@@ -200,9 +201,9 @@ export function FigmaContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Message" 
-                          {...field} 
+                        <Textarea
+                          placeholder="Message"
+                          {...field}
                           className="border-white/20 bg-white/10 text-white/80 h-[109px] resize-none text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                         />
                       </FormControl>
@@ -210,10 +211,10 @@ export function FigmaContactForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 {/* Submit button */}
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className={cn(
                     "w-full flex items-center justify-center gap-2 text-white text-[15px] font-medium py-3 px-4 rounded-lg",
                     "relative bg-gradient-to-r from-[#e10000] to-[#4400c2] hover:scale-105 hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300"
@@ -229,16 +230,16 @@ export function FigmaContactForm() {
                     ) : (
                       <>
                         <span className="transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-cyan-300">Send it</span>
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="30" 
-                          height="30" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="2" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           className="w-5 h-5 transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-cyan-300"
                         >
                           <path d="M22 2L11 13"></path>

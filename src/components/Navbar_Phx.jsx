@@ -158,7 +158,7 @@ const Navbar = () => {
                 </a>
               </li>
               {/* About us */}
-              <li>
+              {/* <li>
                 <a
                   href="#about-us"
                   className="text-white/80 uppercase text-sm font-medium tracking-wide px-1 py-2 relative transition-colors"
@@ -178,9 +178,9 @@ const Navbar = () => {
                     }}
                   />
                 </a>
-              </li>
+              </li> */}
               {/* Our Domains */}
-              <li>
+              {/* <li>
                 <a
                   href="#our-domains"
                   className="text-white/80 uppercase text-sm font-medium tracking-wide px-1 py-2 relative transition-colors"
@@ -200,9 +200,9 @@ const Navbar = () => {
                     }}
                   />
                 </a>
-              </li>
+              </li> */}
               {/* Our Collaborations */}
-              <li>
+              {/* <li>
                 <a
                   href="#our-collaborations"
                   className="text-white/80 uppercase text-sm font-medium tracking-wide px-1 py-2 relative transition-colors"
@@ -222,7 +222,7 @@ const Navbar = () => {
                     }}
                   />
                 </a>
-              </li>
+              </li> */}
               {/* Pages Dropdown */}
               <li className="relative group">
                 <button

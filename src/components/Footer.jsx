@@ -29,13 +29,14 @@ const Footer = () => {
             {/* Counter Box */}
             <div
               className={`
-                bg-white/10 rounded-lg px-6 py-4 shadow text-center
-                ${"md:absolute md:left-0 md:bottom-0 md:mb-2 md:ml-2"}
-                w-full md:w-[220px]
-                mt-3 md:mt-0
-              `}
+                    bg-white/10 rounded-lg px-6 py-4 shadow text-center
+                    md:absolute md:left-0 md:bottom-[-5px] md:ml-2
+                    w-full md:w-[220px]
+                    mt-3 md:mt-0 
+                  `}
               style={{ minHeight: "90px" }}
             >
+
               <span className="block text-xs text-white/70 mb-2">Website Visits</span>
               <img
                 src="https://hitwebcounter.com/counter/counter.php?page=20929157&style=0036&nbdigits=5&type=page&initCount=0"
@@ -70,19 +71,30 @@ const Footer = () => {
           </div>
 
           {/* ── Section 3: Socials ── */}
-          <div className="flex flex-col items-center md:items-end w-full md:w-1/3">
+          <div className="flex flex-col items-center md:items-end w-full md:w-1/3 md:mt-[5px]">
             <h3 className="text-cyan-400 font-semibold mb-2 text-lg">Connect with us</h3>
             {/* Contact Section */}
             <div className="mb-3 text-sm text-white/80 text-center md:text-right">
               <div>
-                <span className="font-semibold">Email:</span> <a href="mailto:phoenixcybersec008@gmail.com" className="underline hover:text-cyan-400">phoenixcybersec008@gmail.com</a>
+                <span className="font-semibold">Email:</span>{" "}
+                <a
+                  href="mailto:phoenixcybersec008@gmail.com"
+                  className="underline hover:text-cyan-400"
+                >
+                  phoenixcybersec008@gmail.com
+                </a>
               </div>
               <div>
-                <span className="font-semibold">Phone:</span> <a href="tel:+919284689196" className="underline hover:text-cyan-400">+91 9284689196</a>
+                <span className="font-semibold">Phone:</span>{" "}
+                <a
+                  href="tel:+919284689196"
+                  className="underline hover:text-cyan-400"
+                >
+                  +91 9284689196
+                </a>
               </div>
             </div>
-            {/* Our Socials label */}
-            <div className="mb-1 text-xs text-white/60 font-semibold tracking-wide uppercase text-center md:text-right">
+            <div className="mb-1 text-xs text-white/60 font-semibold tracking-wide uppercase text-center md:text-right ">
               Our socials
             </div>
             <StyledWrapper>
@@ -100,7 +112,7 @@ const Footer = () => {
                   <a href="https://discord.gg/j6C9YSU86D" aria-label="Discord" data-social="discord" target="_blank" rel="noopener noreferrer">
                     <div className="filled" />
                     <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.1a.074.074 0 0 0-.079.037c-.342.607-.724 1.396-.99 2.021a18.524 18.524 0 0 0-5.59 0 12.51 12.51 0 0 0-.995-2.021.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.069.069 0 0 0-.032.027C.533 9.09-.32 13.579.099 18.021a.082.082 0 0 0 .031.056c2.104 1.548 4.13 2.488 6.102 3.115a.077.077 0 0 0 .084-.027c.472-.65.893-1.34 1.248-2.065a.076.076 0 0 0-.041-.104c-.662-.251-1.293-.549-1.899-.892a.077.077 0 0 1-.008-.127c.127-.096.254-.197.373-.299a.074.074 0 0 1 .077-.01c3.967 1.813 8.27 1.813 12.193 0a.073.073 0 0 1 .078.009c.12.102.246.203.374.299a.077.077 0 0 1-.006.127 12.298 12.298 0 0 1-1.9.892.076.076 0 0 0-.04.105c.36.724.782 1.414 1.247 2.064a.076.076 0 0 0 .084.028c1.978-.627 4.004-1.567 6.107-3.115a.077.077 0 0 0 .03-.055c.5-5.177-.838-9.637-3.548-13.625a.061.061 0 0 0-.03-.028zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.094 2.157 2.418 0 1.334-.955 2.419-2.157 2.419zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.094 2.157 2.418 0 1.334-.947 2.419-2.157 2.419z" fill="currentColor"/>
+                      <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.1a.074.074 0 0 0-.079.037c-.342.607-.724 1.396-.99 2.021a18.524 18.524 0 0 0-5.59 0 12.51 12.51 0 0 0-.995-2.021.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.369a.069.069 0 0 0-.032.027C.533 9.09-.32 13.579.099 18.021a.082.082 0 0 0 .031.056c2.104 1.548 4.13 2.488 6.102 3.115a.077.077 0 0 0 .084-.027c.472-.65.893-1.34 1.248-2.065a.076.076 0 0 0-.041-.104c-.662-.251-1.293-.549-1.899-.892a.077.077 0 0 1-.008-.127c.127-.096.254-.197.373-.299a.074.074 0 0 1 .077-.01c3.967 1.813 8.27 1.813 12.193 0a.073.073 0 0 1 .078.009c.12.102.246.203.374.299a.077.077 0 0 1-.006.127 12.298 12.298 0 0 1-1.9.892.076.076 0 0 0-.04.105c.36.724.782 1.414 1.247 2.064a.076.076 0 0 0 .084.028c1.978-.627 4.004-1.567 6.107-3.115a.077.077 0 0 0 .03-.055c.5-5.177-.838-9.637-3.548-13.625a.061.061 0 0 0-.03-.028zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.094 2.157 2.418 0 1.334-.955 2.419-2.157 2.419zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.094 2.157 2.418 0 1.334-.947 2.419-2.157 2.419z" fill="currentColor" />
                     </svg>
                   </a>
                   <div className="tooltip">Discord</div>

@@ -18,15 +18,15 @@ const MissionCard = ({ title, text }) => {
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * 10;
-    const rotateY = ((x - centerX) / centerX) * -10;
+    const rotateX = ((y - centerY) / centerY) * 8;
+    const rotateY = ((x - centerX) / centerX) * -8;
 
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
   };
 
   const handleMouseLeave = () => {
     const card = cardRef.current;
-    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    card.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0px)`;
   };
 
   return (
@@ -41,53 +41,79 @@ const MissionCard = ({ title, text }) => {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="card relative w-full max-w-[90vw] sm:max-w-[80vw] md:w-[420px] lg:w-[480px] xl:w-[540px] p-4 bg-[rgba(19,19,21,0.43)] border-2 border-white/10 backdrop-blur-xl transition-transform duration-300 ease-out flex flex-col justify-center h-full overflow-hidden"
+        className="card group relative w-full max-w-[80vw] sm:max-w-[70vw] md:w-[340px] lg:w-[380px] xl:w-[420px] min-h-[240px] md:min-h-[280px] border border-white/20 backdrop-blur-xl transition-all duration-500 ease-out flex flex-col justify-center cursor-pointer overflow-hidden bg-[rgba(19,19,21,0.8)] hover:bg-transparent"
         style={{
           transformStyle: 'preserve-3d',
           borderRadius: '20px',
+          boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04)',
         }}
       >
-        {/* Grainy overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 z-10"
+        <div 
+          className="absolute inset-0 z-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500"
           style={{
-            backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')",
-            opacity: 0.05,
-          }}
-        />
-        {/* Shine border overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 z-20"
-          style={{
-            padding: '2px',
-            background: 'linear-gradient(135deg, rgba(19, 19, 19, 0.25), transparent)',
+            background: 'linear-gradient(135deg, rgba(192,192,192,0.03) 0%, rgba(19,19,21,0.1) 50%, rgba(192,192,192,0.02) 100%)',
             borderRadius: '20px',
           }}
         />
-        {/* Glow effect */}
         <div
-          className="glow absolute z-0 pointer-events-none"
+          className="pointer-events-none absolute inset-0 z-5 opacity-[0.03]"
+          style={{
+            backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')",
+            mixBlendMode: 'overlay',
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 z-10 group-hover:opacity-100 opacity-60 transition-opacity duration-500"
+          style={{
+            background: 'linear-gradient(135deg, rgba(192,192,192,0.1), transparent 30%, transparent 70%, rgba(192,192,192,0.05))',
+            borderRadius: '20px',
+            padding: '1px',
+          }}
+        />
+        <div
+          className="glow absolute z-15 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             top: 'var(--y, 50%)',
             left: 'var(--x, 50%)',
-            width: 200,
-            height: 200,
-            background: 'radial-gradient(circle at center, rgba(0,255,200,0.2), transparent 80%)',
+            width: '250px',
+            height: '250px',
+            background: 'radial-gradient(circle at center, rgba(192,192,192,0.15) 0%, rgba(192,192,192,0.05) 40%, transparent 70%)',
             transform: 'translate(-50%, -50%)',
-            opacity: 0,
-            transition: 'opacity 0.3s ease',
+            borderRadius: '50%',
           }}
         />
-        {/* Show glow on hover */}
-        <style>{`
-          .card:hover .glow, .card:focus .glow {
-            opacity: 1 !important;
-          }
-        `}</style>
-        <div className="z-30 text-white text-center opacity-40 hover:opacity-100 focus:opacity-100 transition-opacity duration-500">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading">{title}</h2>
-          <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl font-body">{text}</p>
+        <div className="relative z-30 px-6 py-4 md:px-8 md:py-6 text-center">
+          <motion.h2 
+            className="text-white font-bold mb-4 leading-tight tracking-wide"
+            style={{ 
+              fontSize: 'clamp(1.25rem, 3vw, 2rem)',
+              textShadow: '0 2px 20px rgba(192,192,192,0.2)',
+              letterSpacing: '0.02em'
+            }}
+            initial={{ opacity: 0.7 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            {title}
+          </motion.h2>
+          <div className="w-12 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent mx-auto mb-4 group-hover:via-white/60 transition-all duration-500" />
+          <motion.p 
+            className="text-gray-300 leading-relaxed font-light opacity-90 group-hover:opacity-100 group-hover:text-gray-200 transition-all duration-500"
+            style={{ 
+              fontSize: 'clamp(0.85rem, 2vw, 1.1rem)',
+              lineHeight: '1.6',
+              letterSpacing: '0.01em'
+            }}
+            initial={{ opacity: 0.8 }}
+            whileInView={{ opacity: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {text}
+          </motion.p>
         </div>
+        <div 
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        />
       </div>
     </motion.div>
   );
