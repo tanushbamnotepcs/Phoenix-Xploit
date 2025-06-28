@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+body {
+  background: light-dark(#fff, #000);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+}
+
+main {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+main a {
+  display: block; /* 👈 Ensures full clickable area */
+  font-weight: 300;
+  color: inherit;
+  font-family: 'Reddit Mono', monospace;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  opacity: 0.7;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-block: 0.3rem;
+}
+
+main a span {
+  display: inline-block; /* 👈 Allows full width hover target */
+  width: 100%;
+}
+
+main a:hover,
+main a:focus-visible {
+  opacity: 1;
+}
+
+main a:last-of-type {
+  font-size: 1em;
+  opacity: 0.6;
+}
+
+hr {
+  margin-block: 0.2rem;
+  background: canvasText;
+  height: 2px;
+  width: 100%;
+  opacity: 0.25;
+}
+
+.bear-link {
+  color: canvasText;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 48px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  opacity: 0.8;
+}
+
+.bear-link:hover,
+.bear-link:focus-visible {
+  opacity: 1;
+}
+
+.bear-link svg {
+  width: 75%;
+}

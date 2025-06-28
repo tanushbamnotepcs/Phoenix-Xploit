@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  gap: 30px; /* Add spacing between items */
+  background: rgba(255, 255, 255, 0.1); /* Optional: add slight glassy look */
+  backdrop-filter: blur(8px);           /* Optional: only if you want a glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional */
+  border-radius: 115px;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.card svg {
+  height: 28px; /* was 24px */
+  width: 28px;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+.social-icons:hover svg {
+  transform: scale(1.2); /* Gives nice interactive feel */
+}
+
+.social-icons {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  transition: all 0.3s ease;
+}
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+.social-icons > p {
+  --var: -0%;
+  position: absolute;
+  top: var(--var);
+  transition: all 0.7s;
+  background-color: dodgerblue;
+  border-radius: 4px;
+  opacity: 0;
+  padding: 1.5px 4px;
+  width: max-content;
+  font-size: 9px;
+}
+
+.social-icons > p::after {
+  content: "";
+  position: absolute;
+  border-top: 6px solid dodgerblue;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.social-icons > a {
+  --var: -0%;
+  position: absolute;
+  bottom: var(--var);
+  width: max-content;
+  transition: all 0.7s;
+  opacity: 0;
+  padding: 1.5px 4px;
+  background-color: crimson;
+  margin-top: 4px;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.social-icons > a::after {
+  content: "";
+  position: absolute;
+  border-bottom: 6px solid crimson;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.social-icons:hover > a,
+.social-icons:hover > p {
+  --var: -55%;
+  opacity: 1;
+}
+
+.social-icons:hover {
+  z-index: 15;
+}
+
+.card:hover > .social-icons:not(:hover) {
+  filter: blur(2px);
+  transform: scale(0.8);
+}
+
+.card svg {
+  height: 16px;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}

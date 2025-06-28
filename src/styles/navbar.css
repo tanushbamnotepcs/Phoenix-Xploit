@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.neon-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 1.2rem;
+  min-height: 48px;
+  background: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-section.center {
+  flex: 0 1 auto;
+  justify-content: center;
+}
+
+.navbar-section.left {
+  flex: 1 1 0%;
+  justify-content: flex-start;
+}
+
+
+.navbar-section.right {
+  flex: 1 1 0%;
+  justify-content: flex-end;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 3rem; /* equal to nav-links gap */
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo span {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.logo small {
+  display: block;
+  color: #ffd700;
+  font-size: 0.6rem;
+  font-weight: bold;
+  margin-top: -6px;
+}
+
+
+.neon-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.neon-nav-links li a {
+  display: inline-block;
+  padding: 0.18rem 0.7rem;
+  color: #fff;
+  border-radius: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #9e0c0c, #181168) border-box;
+  border: 3px solid transparent;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 8px #ff416c44, 0 0 8px #007cf044;
+}
+
+.neon-nav-links li a:hover {
+  box-shadow: 0 0 10px #ff416c, 0 0 20px #007cf0;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.05);
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.18rem 0.7rem;
+  color: #fff;
+  border-radius: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(#000, #000) padding-box, linear-gradient(90deg, #9e0c0c, #181168) border-box;
+  border: 3px solid transparent;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 8px #9e0c0c, 0 0 8px #14497f;
+  margin-left: auto;
+  margin-right: 130px;  /* equal to nav-links gap */
+}
+
+.contact-button:hover {
+  box-shadow: 0 0 10px #ff416c, 0 0 20px #007cf0;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.05);
+}
