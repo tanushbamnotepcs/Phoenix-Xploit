@@ -24,8 +24,8 @@
 }
 
 .scene {
-  width: 400px;
-  height: 450px;
+  width: 600px;
+  height: 675px;
   perspective: 1500px;
   position: relative;
 }
@@ -41,20 +41,22 @@
 
 .carousel__cell {
   position: absolute;
-  width: 380px;
+  width: 570px;
   left: 10px;
-  height: 450px;
+  height: 570px;
   border: none;
-  border-radius: 20px;
+  border-radius: 50%;
   transition: filter 0.7s ease, opacity 0.7s ease;
+  overflow: hidden;
 }
 
 /* Custom card styles */
 .card-custom {
   background: transparent;
   box-shadow: 0px 4px 49px 10px rgba(224, 212, 212, 0.41);
-  border-radius: 20px;
+  border-radius: 50%;
   border: none !important;
+  overflow: hidden;
 }
 
 /* Font styles */
@@ -101,8 +103,8 @@
 .carousel__cell.active-slide .blur-background {
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   z-index: 5;
   opacity: 0.1; /* Very low opacity to make image fully visible */
   transition: all 0.7s ease;
@@ -124,9 +126,9 @@
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
   padding: 8px;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .text-content h3 {
@@ -150,4 +152,17 @@
   line-height: 1.4;
   font-weight: 500;
   letter-spacing: 0.3px;
+}
+
+.card-bg-wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg-image {
+  border-radius: 50% !important;
+  overflow: hidden;
 } 

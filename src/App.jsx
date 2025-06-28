@@ -20,7 +20,7 @@ import OurJourney from './pages/OurJourney'; // Import OurJourney page
 import BlogDetail from "./pages/BlogDetail";
 import Login from "./pages/login";
 import AdminDashboard from "./pages/AdminDashboard";
-//import TeamBatches from './pages/teamBatches';
+import TeamBatches from './pages/teamBatches';
 
 
 

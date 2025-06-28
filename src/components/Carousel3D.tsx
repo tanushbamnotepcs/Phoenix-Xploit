@@ -18,7 +18,7 @@ interface SliderOptions {
 }
 
 const carousel = (slider: SliderOptions) => {
-  const z = 400 // Increased depth
+  const z = 600 // Increased depth for 1.5x scale
   function rotate() {
     const deg = 360 * slider.track.details.progress
     slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
@@ -70,7 +70,7 @@ export default function Carousel3D() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
   
-  const [sliderRef] = useKeenSlider({
+  const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     selector: ".carousel__cell",
     renderMode: "custom",
@@ -93,16 +93,18 @@ export default function Carousel3D() {
             <div 
               key={index} 
               className={`carousel__cell number-slide${index + 1} ${loaded && index === currentSlide ? "active-slide" : ""}`}
+              onClick={() => instanceRef && instanceRef.current && instanceRef.current.moveToIdx(index)}
+              style={{ cursor: loaded && index !== currentSlide ? "pointer" : "default" }}
             >
               <Card className="card-custom w-full h-full overflow-hidden">
-                <CardContent className="p-0 flex flex-col h-full">
-                  <div className="card-bg-wrapper h-full relative overflow-hidden">
+                <CardContent className="p-0 flex flex-col h-full w-full">
+                  <div className="card-bg-wrapper h-full w-full relative overflow-hidden">
                     {/* Blur background layer */}
                     <div className="blur-background"></div>
                     
                     {/* Background image */}
-                    <div className={`absolute inset-0 rounded-[20px] overflow-hidden shadow-lg transition-opacity duration-700 bg-image z-[10]`}>
-                      <div className="w-full h-full bg-cover bg-center" 
+                    <div className={`absolute inset-0 rounded-full overflow-hidden shadow-lg transition-opacity duration-700 bg-image z-[10]`}>
+                      <div className="w-full h-full bg-cover bg-center rounded-full" 
                            style={{ backgroundImage: "url('/images/1.png')" }}>
                       </div>
                     </div>

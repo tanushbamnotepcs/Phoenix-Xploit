@@ -9,11 +9,12 @@ import AboutUs from './AboutUs';
 import Footer from './Footer';
 import '../css/globals.css';
 import '../css/carousel.css';
+import Teamcard from './ourTeam';
 
 const HomeContent = () => (
-    <div className="relative w-100% min-h-screen overflow-hidden">
+    <div className="relative w-screen min-h-screen overflow-hidden justify-center items-center">
         <PhoenixParticlesBackground />
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col items-center w-full">
             <AboutUs />
             <SectionSpacer size="xs" />
             <OurMission />
@@ -22,10 +23,15 @@ const HomeContent = () => (
             <SectionSpacer size="xs" />
             <Carousel3D />
             <SectionSpacer size="large" />
-            <div id="contact">
+            <div id="contact" className="w-full">
                 <FigmaContactForm />
             </div>
             <SectionSpacer size="medium" />
+            <div className='w-full flex flex-row gap-20 justify-center items-center'>
+                <Teamcard />
+                <Teamcard />
+                <Teamcard />
+            </div>
             <Footer />
         </div>
     </div>

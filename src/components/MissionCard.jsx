@@ -41,9 +41,10 @@ const MissionCard = ({ title, text }) => {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="card relative w-full max-w-[90vw] sm:max-w-[80vw] md:w-[420px] lg:w-[480px] xl:w-[540px] p-4 bg-[rgba(19,19,21,0.43)] border-2 border-white/10 backdrop-blur-xl rounded-2xl transition-transform duration-300 ease-out flex flex-col justify-center h-full overflow-hidden"
+        className="card relative w-full max-w-[90vw] sm:max-w-[80vw] md:w-[420px] lg:w-[480px] xl:w-[540px] p-4 bg-[rgba(19,19,21,0.43)] border-2 border-white/10 backdrop-blur-xl transition-transform duration-300 ease-out flex flex-col justify-center h-full overflow-hidden"
         style={{
           transformStyle: 'preserve-3d',
+          borderRadius: '20px',
         }}
       >
         {/* Grainy overlay */}
@@ -56,10 +57,11 @@ const MissionCard = ({ title, text }) => {
         />
         {/* Shine border overlay */}
         <div
-          className="pointer-events-none absolute inset-0 z-20 rounded-[20px]"
+          className="pointer-events-none absolute inset-0 z-20"
           style={{
             padding: '2px',
             background: 'linear-gradient(135deg, rgba(19, 19, 19, 0.25), transparent)',
+            borderRadius: '20px',
           }}
         />
         {/* Glow effect */}

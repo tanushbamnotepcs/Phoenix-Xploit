@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
 body {
-  background: light-dark(#fff, #000);
   display: grid;
   place-items: center;
   min-height: 100vh;

@@ -3,7 +3,7 @@ import SectionSpacer from "./SectionSpacer";
 import PheonixLogoParticles from "./PheonixLogoParticles";
 
 const LandingPage = () => (
-    <div className="bg-black ">
+    <div className="bg-black w-screen">
         <SectionSpacer size="small" />
         <PheonixLogoParticles />
         <SectionSpacer size="none" />
