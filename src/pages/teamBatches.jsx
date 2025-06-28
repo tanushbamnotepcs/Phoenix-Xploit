@@ -1,6 +1,7 @@
 // components/TeamBatches.jsx
 import React from 'react';
 import Teamcard from '../components/ourTeam';
+import { StarsBG } from '../components/background/StarsBG';
 
 const teamData = {
   batch1: [
@@ -24,7 +25,6 @@ const teamData = {
       twitter: 'https://twitter.com/ghost_dev',
     },
   ],
-
   batch2: [
     {
       name: 'Sarah Khan',
@@ -58,17 +58,21 @@ const teamData = {
 
 const TeamBatches = () => {
   return (
-    <div className="batches-wrapper">
-      {Object.entries(teamData).map(([batchName, members]) => (
-        <div key={batchName} className="batch">
-          <h2>{batchName.toUpperCase()}</h2>
-          <div className="batch-row">
-            {members.map((member, index) => (
-              <Teamcard key={index} {...member} />
-            ))}
+    <div className="relative min-h-screen w-screen overflow-hidden">
+      <StarsBG className="absolute inset-0 w-full h-full z-0" />
+      
+      <div className="relative z-10 px-4 py-8 text-white">
+        {Object.entries(teamData).map(([batchName, members]) => (
+          <div key={batchName} className="batch mb-12">
+            <h2 className="text-3xl font-bold mb-4">{batchName.toUpperCase()}</h2>
+            <div className="batch-row flex flex-wrap gap-6">
+              {members.map((member, index) => (
+                <Teamcard key={index} {...member} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

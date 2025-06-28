@@ -49,7 +49,7 @@ const App = () => {
            <Route path="/blog/:id" element={<BlogDetail />} />
            <Route path="/notphoenixadmin" element={<Login />} />
            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-           {/* <Route path="/our-team" element={<TeamBatches />} />  */}
+           <Route path="/our-team" element={<TeamBatches />} /> 
         </Routes>
       </Router>
     </ThemeProvider>
