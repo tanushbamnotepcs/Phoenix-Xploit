@@ -5,7 +5,7 @@ function CreateBlog({ blogPosts }) {
     const navigate = useNavigate();
 
     return (
-        <div className="bg-black min-h-screen py-10 px-4">
+        <div className="py-10 px-4">
             <h1 className="text-3xl font-bold mb-8 text-center text-gray-100">Our Blog</h1>
             <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
                 {blogPosts.map((post) => (

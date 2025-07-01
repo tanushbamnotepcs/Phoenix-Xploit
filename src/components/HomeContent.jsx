@@ -27,7 +27,7 @@ const HomeContent = () => (
                 <FigmaContactForm />
             </div>
             <SectionSpacer size="medium" />
-            <div className='w-full flex flex-row gap-20 justify-center items-center'>
+            <div className='w-full flex flex-row gap-20 justify-center items-center pb-20'>
                 <Teamcard />
                 <Teamcard />
                 <Teamcard />
