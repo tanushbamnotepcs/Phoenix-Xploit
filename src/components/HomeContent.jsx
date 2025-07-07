@@ -3,6 +3,7 @@ import OurMission from './OurMission';
 import DepartmentHeading from './dept';
 import SectionSpacer from './SectionSpacer';
 import Carousel3D from './Carousel3D';
+import Collaborators from './Collaborator';
 import { FigmaContactForm } from './contact/FigmaContactForm';
 import PhoenixParticlesBackground from './background/PhoenixParticlesBackground';
 import AboutUs from './AboutUs';
@@ -22,7 +23,8 @@ const HomeContent = () => (
             <DepartmentHeading />
             <SectionSpacer size="xs" />
             <Carousel3D />
-            <SectionSpacer size="large" />
+            <Collaborators />
+            <SectionSpacer size="xs" />
             <div id="contact" className="w-full">
                 <FigmaContactForm />
             </div>
