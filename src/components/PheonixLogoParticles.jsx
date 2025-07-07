@@ -26,11 +26,21 @@ const PheonixLogoParticles = () => {
     };
     canvas.addEventListener("mousemove", handleMouseMove);
 
-    logoImage.src = "logo.png";
+    logoImage.src = window.innerWidth <= 768 ? "phx_logo.png" : "logo.png";
     logoImage.onload = function () {
-      const logoWidth = 1000;
-      const logoHeight = 700;
-      const verticalOffset = 10; // Reduce this value for less top/bottom margin
+      // Responsive logo size and image
+      let logoWidth, logoHeight, verticalOffset;
+      if (window.innerWidth <= 768) {
+        // Mobile view
+        logoWidth = 600;
+        logoHeight = 600;
+        verticalOffset = 0;
+      } else {
+        // Desktop view
+        logoWidth = 1000;
+        logoHeight = 700;
+        verticalOffset = 10;
+      }
 
       const logoX = canvas.width / 2 - logoWidth / 2;
       const logoY = canvas.height / 2 - logoHeight / 2 - verticalOffset;

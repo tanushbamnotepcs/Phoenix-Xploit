@@ -29,22 +29,32 @@ const Footer = () => {
             {/* Counter Box */}
             <div
               className={`
-                    bg-white/10 rounded-lg px-6 py-4 shadow text-center
-                    md:absolute md:left-0 md:bottom-[-5px] md:ml-2
-                    w-full md:w-[220px]
-                    mt-3 md:mt-0 
-                  `}
+                        bg-white/10 rounded-lg px-6 py-4 shadow text-center
+                        md:absolute md:left-0 md:bottom-[-5px] md:ml-2
+                        w-full md:w-[220px]
+                        mt-3 md:mt-0 
+                      `}
               style={{ minHeight: "90px" }}
             >
+              <span className="block text-xs text-white/70 mb-2">Website Visits</span>
 
-              <span className="block text-xs text-white/70 mb-2">Website Visits</span>
-              <img
-                src="https://hitwebcounter.com/counter/counter.php?page=20929157&style=0036&nbdigits=5&type=page&initCount=0"
-                title="Counter Widget"
-                alt="Visit counter For Websites"
-                style={{ border: 0, display: "block", margin: "0 auto", width: "180px", height: "48px" }}
-              />
+              {/* Counter embed */}
+              <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://hitwebcounter.com/counter/counter.php?page=21080993&style=0010&nbdigits=5&type=page&initCount=0"
+                  title="Counter Widget"
+                  alt="Visit counter For Websites"
+                  style={{
+                    border: 0,
+                    display: "block",
+                    margin: "0 auto",
+                    width: "180px",
+                    height: "48px"
+                  }}
+                />
+              </a>
             </div>
+
           </div>
 
           {/* ── Section 2: Map & Address ── */}
