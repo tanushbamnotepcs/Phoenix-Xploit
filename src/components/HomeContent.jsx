@@ -11,6 +11,7 @@ import Footer from './Footer';
 import '../css/globals.css';
 import '../css/carousel.css';
 import Teamcard from './ourTeam';
+import Achievements from './Achievements';
 
 const HomeContent = () => (
     <div className="relative w-screen min-h-screen overflow-hidden justify-center items-center">
@@ -29,6 +30,7 @@ const HomeContent = () => (
                 <FigmaContactForm />
             </div>
             <SectionSpacer size="medium" />
+            <Achievements />
             
             <Footer />
         </div>
