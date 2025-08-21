@@ -12,6 +12,7 @@ import '../css/globals.css';
 import '../css/carousel.css';
 import Teamcard from './ourTeam';
 import Achievements from './Achievements';
+import { Journey } from './Journey';
 
 const HomeContent = () => (
     <div className="relative w-screen min-h-screen overflow-hidden justify-center items-center">
@@ -30,6 +31,7 @@ const HomeContent = () => (
                 <FigmaContactForm />
             </div>
             <SectionSpacer size="medium" />
+            <Journey />
             <Achievements />
             
             <Footer />
