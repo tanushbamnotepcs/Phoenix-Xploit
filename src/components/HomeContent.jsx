@@ -25,14 +25,20 @@ const HomeContent = () => (
             <DepartmentHeading />
             <SectionSpacer size="xs" />
             <Carousel3D />
-            <Collaborators />
+            <div id="activities" className="w-full">
+                <Collaborators />
+            </div>
             <SectionSpacer size="xs" />
             <div id="contact" className="w-full">
                 <FigmaContactForm />
             </div>
             <SectionSpacer size="medium" />
-            <Journey />
-            <Achievements />
+            <div id="our-journey" className="w-full">
+                <Journey />
+            </div>
+            <div id="achievements" className="w-full">
+                <Achievements />
+            </div>
             
             <Footer />
         </div>

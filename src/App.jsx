@@ -1,7 +1,7 @@
 // Example usage of the migrated components in a React application
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 
 // Import CSS
@@ -26,6 +26,17 @@ import TeamBatches from './pages/teamBatches';
 
 // Example Home page that uses the components
 const HomePage = () => {
+  const location = useLocation();
+  React.useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const id = location.state.scrollTo;
+      // wait for content to mount
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  }, [location]);
   return (
     <div className="min-h-screen">
       <Navbar />

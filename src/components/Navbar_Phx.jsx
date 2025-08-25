@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const orbitronFont = { fontFamily: "'Orbitron', sans-serif" };
 
 // Dropdown items for "Pages"
 const pagesDropdown = [
-  { label: 'Our Team', href: '/our-team' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Our Journey', href: '#our-journey' },
-  { label: 'Activities', href: '#activities' },
+  { label: 'Our Team', type: 'route', to: '/our-team' },
+  { label: 'Achievements', type: 'hash', to: 'achievements' },
+  { label: 'Our Journey', type: 'hash', to: 'our-journey' },
+  { label: 'Activities', type: 'hash', to: 'activities' },
 ];
 
 // Custom styles for animated underline
@@ -41,6 +42,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +71,24 @@ const Navbar = () => {
 
   // Redirect handler for logo and text
   const handleLogoClick = () => {
-    window.location.href = '/';
+    navigate('/');
+  };
+
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleNav = (item) => {
+    if (item.type === 'route') {
+      navigate(item.to);
+    } else if (item.type === 'hash') {
+      if (window.location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: item.to } });
+      } else {
+        scrollToId(item.to);
+      }
+    }
   };
 
   // Dropdown toggle for mobile
@@ -138,7 +157,6 @@ const Navbar = () => {
               {/* Home */}
               <li>
                 <a
-                  href="/"
                   className="text-white/80 uppercase text-sm font-medium tracking-wide px-1 py-2 relative transition-colors"
                   style={{
                     ...underlineStyle,
@@ -147,6 +165,7 @@ const Navbar = () => {
                   }}
                   onMouseEnter={() => setHoveredIdx(0)}
                   onMouseLeave={() => setHoveredIdx(null)}
+                  onClick={(e) => { e.preventDefault(); navigate('/'); }}
                 >
                   Home
                   <span
@@ -265,10 +284,9 @@ const Navbar = () => {
                   {pagesDropdown.map((item, idx) => (
                     <li key={idx}>
                       <a
-                        href={item.href}
                         className="block px-4 py-2 text-white/90 hover:bg-blue-500/20 hover:text-blue-400 transition-colors text-sm"
                         style={orbitronFont}
-                        onClick={() => setDropdownOpen(false)}
+                        onClick={(e) => { e.preventDefault(); setDropdownOpen(false); handleNav(item); }}
                       >
                         {item.label}
                       </a>
@@ -278,7 +296,6 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="/blogs"
                   className="text-white/80 uppercase text-sm font-medium tracking-wide px-1 py-2 relative transition-colors"
                   style={{
                     ...underlineStyle,
@@ -287,6 +304,7 @@ const Navbar = () => {
                   }}
                   onMouseEnter={() => setHoveredIdx(5)}
                   onMouseLeave={() => setHoveredIdx(null)}
+                  onClick={(e) => { e.preventDefault(); navigate('/blogs'); }}
                 >
                   Blogs
                   <span
@@ -300,9 +318,9 @@ const Navbar = () => {
             </ul>
             {/* Contact Button */}
             <a
-              href="#contact"
               className="ml-4 px-4 py-2 border border-cyan-400/30 rounded text-white uppercase text-sm font-semibold tracking-wide hover:text-cyan-400 hover:border-cyan-400 transition-all"
               style={orbitronFont}
+              onClick={(e) => { e.preventDefault(); if (window.location.pathname !== '/') { navigate('/', { state: { scrollTo: 'contact' } }); } else { scrollToId('contact'); } }}
             >
               Contact Us
             </a>
@@ -318,40 +336,36 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4 w-full">
             <li>
               <a
-                href="/"
                 className="block w-full text-white/80 uppercase text-base font-medium tracking-wide py-2 hover:text-blue-400 transition-colors"
                 style={orbitronFont}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); navigate('/'); }}
               >
                 Home
               </a>
             </li>
             <li>
               <a
-                href="#about-us"
                 className="block w-full text-white/80 uppercase text-base font-medium tracking-wide py-2 hover:text-blue-400 transition-colors"
                 style={orbitronFont}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); if (window.location.pathname !== '/') { navigate('/', { state: { scrollTo: 'about-us' } }); } else { const el = document.getElementById('about-us'); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }}
               >
                 About us
               </a>
             </li>
             <li>
               <a
-                href="#our-domains"
                 className="block w-full text-white/80 uppercase text-base font-medium tracking-wide py-2 hover:text-blue-400 transition-colors"
                 style={orbitronFont}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); if (window.location.pathname !== '/') { navigate('/', { state: { scrollTo: 'our-domains' } }); } else { const el = document.getElementById('our-domains'); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }}
               >
                 Our Domains
               </a>
             </li>
             <li>
               <a
-                href="#our-collaborations"
                 className="block w-full text-white/80 uppercase text-base font-medium tracking-wide py-2 hover:text-blue-400 transition-colors"
                 style={orbitronFont}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); if (window.location.pathname !== '/') { navigate('/', { state: { scrollTo: 'our-collaborations' } }); } else { const el = document.getElementById('our-collaborations'); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }}
               >
                 Our Collaborations
               </a>
@@ -374,10 +388,9 @@ const Navbar = () => {
                   {pagesDropdown.map((item, idx) => (
                     <li key={idx}>
                       <a
-                        href={item.href}
                         className="block px-2 py-2 text-white/90 hover:bg-blue-500/20 hover:text-blue-400 transition-colors text-base rounded"
                         style={orbitronFont}
-                        onClick={handleDropdownItemClick}
+                        onClick={(e) => { e.preventDefault(); handleDropdownItemClick(); handleNav(item); }}
                       >
                         {item.label}
                       </a>
@@ -389,10 +402,9 @@ const Navbar = () => {
           </ul>
           {/* Contact Button for mobile */}
           <a
-            href="#contact"
             className="w-full mt-4 px-4 py-2 border border-cyan-400/30 rounded text-white uppercase text-base font-semibold tracking-wide text-center hover:text-cyan-400 hover:border-cyan-400 transition-all"
             style={orbitronFont}
-            onClick={() => setMenuOpen(false)}
+            onClick={(e) => { e.preventDefault(); setMenuOpen(false); if (window.location.pathname !== '/') { navigate('/', { state: { scrollTo: 'contact' } }); } else { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }}
           >
             Contact Us
           </a>
