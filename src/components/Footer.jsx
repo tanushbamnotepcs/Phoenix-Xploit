@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import Particles from "react-tsparticles";
 
 const orbitronFont = { fontFamily: "'Orbitron', sans-serif" };
 
@@ -18,11 +19,52 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="w-full bg-black/95 border-t border-white/10 text-white pt-10 pb-6 px-4 md:px-12"
+        className="w-full relative border-t border-white/10 text-white pt-10 pb-6 px-4 md:px-12 overflow-hidden"
         style={orbitronFont}
       >
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
-          {/* ── Section 1: Logo & Counter ── */}
+        {/* Particles (behind glass) */}
+        <Particles
+          id="footer-particles"
+          options={{
+            background: { color: { value: "transparent" } },
+            particles: {
+              number: { value: 50, density: { enable: true, area: 800 } },
+              color: { value: "#ffffff" },
+              shape: { type: "circle" },
+              opacity: { value: 0.25 },
+              size: { value: 2 },
+              move: { enable: true, speed: 0.8 },
+              line_linked: { enable: false },
+            },
+            interactivity: {
+              events: { onhover: { enable: false }, onclick: { enable: false } },
+            },
+          }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Glass gradient overlay (subtle red-blue) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            zIndex: 1,
+            background:
+              "linear-gradient(135deg, rgba(255, 0, 80, 0.12), rgba(0, 110, 255, 0.12))",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+          }}
+        />
+
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-0 justify-between relative z-10">
+          {/* ── Section 1: Logo & Counter ── */}
           <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-8 md:mb-0 relative">
             {/* Larger Logo */}
             <img src="/logo.png" alt="Phoenix Logo" className="h-24 mb-3" />
@@ -57,7 +99,7 @@ const Footer = () => {
 
           </div>
 
-          {/* ── Section 2: Map & Address ── */}
+          {/* ── Section 2: Map & Address ── */}
           <div className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0">
             <div className="w-full h-40 md:h-32 rounded-lg overflow-hidden shadow mb-3">
               <iframe
@@ -74,15 +116,15 @@ const Footer = () => {
             <address className="not-italic text-center text-sm text-white/80">
               Phoenix CyberSecurity
               <br />
-              St.&nbsp;Vincent Pallotti College of Engineering and Technology
+              St.&nbsp;Vincent Pallotti College of Engineering and Technology
               <br />
               Nagpur, Maharashtra, India
             </address>
           </div>
 
-          {/* ── Section 3: Socials ── */}
+          {/* ── Section 3: Socials ── */}
           <div className="flex flex-col items-center md:items-end w-full md:w-1/3 md:mt-[5px]">
-            <h3 className="text-cyan-400 font-semibold mb-2 text-lg">Connect with us</h3>
+            <h3 className="text-cyan-400 font-semibold mb-2 text-lg">Connect with us</h3>
             {/* Contact Section */}
             <div className="mb-3 text-sm text-white/80 text-center md:text-right">
               <div>
@@ -153,7 +195,7 @@ const Footer = () => {
       {/* Add a thin line and copyright below the footer */}
       <div className="w-full border-t border-white/20 bg-black/95">
         <div className="max-w-7xl mx-auto px-4 md:px-12 py-2 text-xs text-center text-white/60" style={orbitronFont}>
-          &copy; {new Date().getFullYear()} Phoenix CyberSecurity Club
+          &copy; {new Date().getFullYear()} Phoenix CyberSecurity Club
         </div>
       </div>
     </>

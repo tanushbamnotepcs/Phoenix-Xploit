@@ -16,7 +16,7 @@ import { Journey } from './Journey';
 import { Timeline } from './activities';
 
 const HomeContent = () => (
-	<div className="relative w-screen min-h-screen overflow-hidden justify-center items-center">
+	<div id="landing" className="relative w-screen min-h-screen overflow-hidden justify-center items-center">
 		<PhoenixParticlesBackground />
 		<div className="relative z-10 flex flex-col items-center w-full">
 			<AboutUs />
