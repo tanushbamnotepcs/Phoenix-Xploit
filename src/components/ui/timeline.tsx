@@ -76,7 +76,7 @@ const TimelineItem = React.memo(({ item, index, variants, cardVariants }) => {
       {/* Left side content */}
       <div className="w-1/2 pr-24 text-right">
         <motion.div 
-          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-neutral-900/80"
+          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
           variants={cardVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -103,7 +103,7 @@ const TimelineItem = React.memo(({ item, index, variants, cardVariants }) => {
       {/* Right side content */}
       <div className="w-1/2 pl-24">
         <motion.div 
-          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-neutral-900/80"
+          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
           variants={cardVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}

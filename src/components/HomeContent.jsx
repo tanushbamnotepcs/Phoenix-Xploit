@@ -7,6 +7,7 @@ import Collaborators from './Collaborator';
 import { FigmaContactForm } from './contact/FigmaContactForm';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
+import VortexBackground from './VortexBackground';
 import '../css/globals.css';
 import '../css/carousel.css';
 import '../css/ourTeam.css';
@@ -16,56 +17,68 @@ import { Journey } from './Journey';
 import { ActivitiesTimeline } from './activities';
 
 const HomeContent = () => (
-	<div id="landing" className="relative w-full min-h-screen overflow-hidden justify-center items-center">
-		<div className="relative z-10 flex flex-col items-center w-full">
-			<AboutUs />
-			<SectionSpacer size="medium" />
-			<OurMission />
-			<SectionSpacer size="medium" />
-			<DepartmentHeading />
-			<SectionSpacer size="medium" />
-			<Carousel3D />
-			<SectionSpacer size="medium" />
-			<div id="our-team" className="w-full px-4">
-				<div className="max-w-7xl mx-auto">
-					<h2 className="text-4xl font-bold text-center mb-8 text-white">Our Team</h2>
-					<div className="space-y-12">
-						{Object.entries(teamData).map(([categoryName, members]) => (
-							<div key={categoryName} className="batch">
-								<h3 className="text-2xl font-semibold mb-6 text-center text-gray-300">
-									{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
-								</h3>
-								<div className="flex flex-wrap justify-center gap-6">
-									{members.map((member, index) => (
-										<Teamcard key={index} {...member} />
-									))}
+	<VortexBackground
+		backgroundColor="black"
+		baseHue={220}
+		particleCount={700}
+		rangeY={100}
+		baseSpeed={0.0}
+		rangeSpeed={1.5}
+		baseRadius={1}
+		rangeRadius={2}
+		className="min-h-screen"
+	>
+		<div id="landing" className="relative w-full overflow-hidden justify-center items-center">
+			<div className="relative z-10 flex flex-col items-center w-full">
+				<AboutUs />
+				<SectionSpacer size="medium" />
+				<OurMission />
+				<SectionSpacer size="medium" />
+				<DepartmentHeading />
+				<SectionSpacer size="medium" />
+				<Carousel3D />
+				<SectionSpacer size="medium" />
+				<div id="our-team" className="w-full px-4">
+					<div className="max-w-7xl mx-auto">
+						<h2 className="text-4xl font-bold text-center mb-8 text-white">Our Team</h2>
+						<div className="space-y-12">
+							{Object.entries(teamData).map(([categoryName, members]) => (
+								<div key={categoryName} className="batch">
+									<h3 className="text-2xl font-semibold mb-6 text-center text-gray-300">
+										{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
+									</h3>
+									<div className="flex flex-wrap justify-center gap-6">
+										{members.map((member, index) => (
+											<Teamcard key={index} {...member} />
+										))}
+									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 				</div>
+				<SectionSpacer size="medium" />
+				<div id="activities" className="w-full">
+					<ActivitiesTimeline data={timelineData} />
+					<Collaborators />
+				</div>
+				<SectionSpacer size="medium" />
+				<div id="contact" className="w-full">
+					<FigmaContactForm />
+				</div>
+				<SectionSpacer size="medium" />
+				<div id="our-journey" className="w-full">
+					<Journey />
+				</div>
+				<SectionSpacer size="medium" />
+				<div id="achievements" className="w-full pb-32">
+					<Achievements />
+				</div>
+				
+				<Footer />
 			</div>
-			<SectionSpacer size="medium" />
-			<div id="activities" className="w-full">
-				<ActivitiesTimeline data={timelineData} />
-				<Collaborators />
-			</div>
-			<SectionSpacer size="medium" />
-			<div id="contact" className="w-full">
-				<FigmaContactForm />
-			</div>
-			<SectionSpacer size="medium" />
-			<div id="our-journey" className="w-full">
-				<Journey />
-			</div>
-			<SectionSpacer size="medium" />
-			<div id="achievements" className="w-full pb-32">
-				<Achievements />
-			</div>
-			
-			<Footer />
 		</div>
-	</div>
+	</VortexBackground>
 );
 
 const timelineData = [

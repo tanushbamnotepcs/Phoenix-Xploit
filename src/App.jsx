@@ -23,6 +23,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import TeamBatches from './pages/teamBatches';
 import ParticleDemo from './pages/ParticleDemo';
 import VideoMaskDemo from './pages/VideoMaskDemo';
+import VortexPage from './pages/VortexPage';
 
 
 
@@ -65,6 +66,7 @@ const App = () => {
            <Route path="/our-team" element={<TeamBatches />} />
            <Route path="/particle-demo" element={<ParticleDemo />} /> {/* Added Particle Demo route */}
            <Route path="/video-mask-demo" element={<VideoMaskDemo />} /> {/* Added VideoMask Demo route */}
+           <Route path="/vortex-demo" element={<VortexPage />} /> {/* Added Vortex Demo route */}
         </Routes>
       </Router>
     </ThemeProvider>

@@ -14,7 +14,7 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <div className="relative max-w-[1200px] mx-auto px-6 py-8 bg-black text-white overflow-hidden">
+    <div className="relative max-w-[1200px] mx-auto px-6 py-8 bg-transparent text-white overflow-hidden">
       {/* Pulsing cyber background */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(40,40,255,0.15),rgba(255,0,72,0.1),transparent_70%)] animate-pulse"></div>
 

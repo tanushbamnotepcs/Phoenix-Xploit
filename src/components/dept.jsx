@@ -3,7 +3,7 @@ import "../css/dept.css";
 
 const DepartmentHeading = () => {
   return (
-    <div className="lamp-container relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black w-full rounded-md z-0">
+    <div className="lamp-container relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-transparent w-full rounded-md z-0">
       <div className="relative isolate z-0 flex w-full flex-1 scale-y-125 items-center justify-center">
         {/* Conic Gradient Left */}
         <div

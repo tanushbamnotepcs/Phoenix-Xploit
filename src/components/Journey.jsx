@@ -101,7 +101,7 @@ export const Journey = ({ className, slides = slidesData }) => {
   }, [currentSlide, isHovered]);
 
   return (
-    <section className="bg-black min-h-screen flex flex-col justify-center items-center px-4 py-16 sm:py-20">
+    <section className="bg-transparent min-h-screen flex flex-col justify-center items-center px-4 py-16 sm:py-20">
       <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-20 font-heading text-center">
         Activities
       </h2>
