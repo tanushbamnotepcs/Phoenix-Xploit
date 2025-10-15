@@ -29,7 +29,7 @@ const Collaborators = () => {
         `}
       </style>
 
-      <section className="bg-black min-h-screen flex justify-center items-center px-4 py-16 sm:py-20">
+      <section className="bg-black min-h-screen flex justify-center items-center px-4">
         <div className="flex flex-col items-center w-full max-w-7xl">
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-[#ffff] mb-20 font-heading text-center">
             Collaborations

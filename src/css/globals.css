@@ -116,9 +116,10 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
+  html, body {
     @apply bg-background text-foreground;
     background-color: #000000;
+    overflow-x: hidden;
   }
 }
 
@@ -130,3 +131,22 @@
 /* Commented out missing SVG reference to prevent Vite error
 background-image: url('/blog-images/arrow-icon.svg');
 */
+
+/* Particle Logo Effect Styles */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+.particle-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+

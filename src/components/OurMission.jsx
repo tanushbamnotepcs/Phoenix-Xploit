@@ -147,7 +147,7 @@ const Mission = () => {
   };
 
   return (
-    <section className="flex justify-center px-4 pt-4 md:pt-8 lg:pt-12 pb-4 md:pb-8 lg:pb-12">
+    <section className="flex justify-center px-4">
       <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-4 sm:gap-8 lg:gap-20 scale-[0.95] sm:scale-100 w-full max-w-7xl">
         {cards.map((card, index) => (
           <MissionCard key={index} title={card.title} text={card.text} />

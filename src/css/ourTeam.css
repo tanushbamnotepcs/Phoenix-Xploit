@@ -1,64 +1,38 @@
-.flip-card {
-  background-color: transparent;
+.team-card {
+  position: relative;
   width: 190px;
   height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
-  border: none;
-  outline: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-}
-
-.flip-card-inner {
-  position: relative;
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
-  transform-style: preserve-3d;
-  border: none;
-  outline: none;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotate(180deg) rotateX(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-  position: absolute;
+  background: rgba(46, 43, 43, 0.9);
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 1rem;
-  border: none;
-  outline: none;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(0px);
 }
 
-.flip-card-front {
-  background: #2e2b2b;
-  color: #000;
-  border: none;
-  outline: none;
+.team-card:hover .card-image {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
 }
 
-.flip-card-back {
-  background: #2e2b2b;
-  color: #fff;
-  transform: rotateY(180deg);
-  border: none;
-  outline: none;
+.team-card:hover .card-overlay {
+  opacity: 1;
+  backdrop-filter: blur(5px);
 }
 
 .team-container {
@@ -76,24 +50,11 @@
   width: 100%;
 }
 
-.flip-card-back .back-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-  padding: 1rem;
-  position: relative;
-  border: none;
-  outline: none;
-}
-
 .social-card {
-  width: 100%; /* make it stretch full width of card */
+  width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
+  margin-top: 1rem;
 }
 
 .card-image {
@@ -106,11 +67,11 @@
 }
 
 .back-description {
-  font-family: 'Poppins', sans-serif; /* clean modern font */
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   line-height: 1.4;
-  color: #ccc;
-  margin: 0 1rem 3rem 1rem; /* space around text */
+  color: #fff;
+  margin: 0 1rem;
   text-align: center;
   max-width: 90%;
 }

@@ -21,6 +21,8 @@ import BlogDetail from "./pages/BlogDetail";
 import Login from "./pages/login";
 import AdminDashboard from "./pages/AdminDashboard";
 import TeamBatches from './pages/teamBatches';
+import ParticleDemo from './pages/ParticleDemo';
+import VideoMaskDemo from './pages/VideoMaskDemo';
 
 
 
@@ -60,7 +62,9 @@ const App = () => {
            <Route path="/blog/:id" element={<BlogDetail />} />
            <Route path="/notphoenixadmin" element={<Login />} />
            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-           <Route path="/our-team" element={<TeamBatches />} /> 
+           <Route path="/our-team" element={<TeamBatches />} />
+           <Route path="/particle-demo" element={<ParticleDemo />} /> {/* Added Particle Demo route */}
+           <Route path="/video-mask-demo" element={<VideoMaskDemo />} /> {/* Added VideoMask Demo route */}
         </Routes>
       </Router>
     </ThemeProvider>

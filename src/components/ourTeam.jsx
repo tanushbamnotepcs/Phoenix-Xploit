@@ -8,22 +8,18 @@ const Teamcard = ({ image, name, hackerName, description, domain, linkedin, twit
 
   return (
     <div ref={cardRef} className="team-container">
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img src={image} alt={name} className="card-image" />
+      <div className="team-card">
+        <img src={image} alt={name} className="card-image" />
+        <div className="card-overlay">
+          <div className="back-description">
+            <p>{description}</p>
           </div>
-          <div className="flip-card-back">
-            <div className="back-description">
-              <p>{description}</p>
-            </div>
-            <div className="social-card">
-              <Socialcard
-                linkedin={linkedin}
-                twitter={twitter}
-                instagram={instagram}
-              />
-            </div>
+          <div className="social-card">
+            <Socialcard
+              linkedin={linkedin}
+              twitter={twitter}
+              instagram={instagram}
+            />
           </div>
         </div>
       </div>
@@ -31,7 +27,7 @@ const Teamcard = ({ image, name, hackerName, description, domain, linkedin, twit
         <Txt
           name={name}
           hackerName={hackerName}
-          domain={domain} // ✅ domain now passed correctly
+          domain={domain}
           hoverRef={cardRef}
         />
       </div>

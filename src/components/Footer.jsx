@@ -19,8 +19,8 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="w-full relative border-t border-white/10 text-white pt-10 pb-6 px-4 md:px-12 overflow-hidden"
-        style={orbitronFont}
+        className="relative border-t border-white/10 text-white px-4 md:px-12 py-7 md:py-9 lg:py-11 overflow-hidden"
+        style={{...orbitronFont, width: '100vw'}}
       >
         {/* Particles (behind glass) */}
         <Particles
@@ -63,9 +63,9 @@ const Footer = () => {
           }}
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-0 justify-between relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-7 md:gap-5 lg:gap-7 justify-between relative z-10">
           {/* ── Section 1: Logo & Counter ── */}
-          <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-8 md:mb-0 relative">
+          <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mb-6 md:mb-0 relative">
             {/* Larger Logo */}
             <img src="/logo.png" alt="Phoenix Logo" className="h-24 mb-3" />
             {/* Counter Box */}
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
 
           {/* ── Section 2: Map & Address ── */}
-          <div className="flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0">
+          <div className="flex flex-col items-center w-full md:w-1/3 mb-6 md:mb-0">
             <div className="w-full h-40 md:h-32 rounded-lg overflow-hidden shadow mb-3">
               <iframe
                 title="Phoenix Club Location"
@@ -126,7 +126,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end w-full md:w-1/3 md:mt-[5px]">
             <h3 className="text-cyan-400 font-semibold mb-2 text-lg">Connect with us</h3>
             {/* Contact Section */}
-            <div className="mb-3 text-sm text-white/80 text-center md:text-right">
+            <div className="mb-4 text-sm text-white/80 text-center md:text-right">
               <div>
                 <span className="font-semibold">Email:</span>{" "}
                 <a
@@ -193,7 +193,7 @@ const Footer = () => {
         </div>
       </footer>
       {/* Add a thin line and copyright below the footer */}
-      <div className="w-full border-t border-white/20 bg-black/95">
+      <div className="border-t border-white/20 bg-black/95" style={{width: '100vw'}}>
         <div className="max-w-7xl mx-auto px-4 md:px-12 py-2 text-xs text-center text-white/60" style={orbitronFont}>
           &copy; {new Date().getFullYear()} Phoenix CyberSecurity Club
         </div>

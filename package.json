@@ -12,7 +12,6 @@
     "@tailwindcss/postcss": "^4.1.8",
     "@web3forms/react": "^1.1.3",
     "browserslist": "^4.24.4",
-    "caniuse-lite": "^1.0.30001715",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "electron-to-chromium": "^1.5.140",
@@ -40,7 +39,6 @@
     "source-map-js": "^1.2.1",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.3.1",
-    "tweakpane": "^4.0.5",
     "update-browserslist-db": "^1.1.3",
     "zod": "^3.25.56"
   },

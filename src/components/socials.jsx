@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Socials.css';
+import '../css/socials.css';
 
 const Socialcard = ({ linkedin, twitter, instagram }) => {
   return (

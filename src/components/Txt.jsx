@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import '../css/Txt.css';
-import { Pane } from 'tweakpane';
 import gsap from 'gsap';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 
@@ -18,39 +17,6 @@ function Txt({
     const element = nameRef.current;
     const parent = hoverRef?.current;
 
-    const config = {
-      theme: 'dark',
-      random: true,
-    };
-
-    const ctrl = new Pane({ title: 'Config', expanded: true });
-
-    const update = () => {
-      document.documentElement.dataset.theme = config.theme;
-    };
-
-    const sync = (event) => {
-      if (
-        !document.startViewTransition ||
-        event.target.controller.view.labelElement.innerText !== 'Theme'
-      )
-        return update();
-      document.startViewTransition(() => update());
-    };
-
-    ctrl.addBinding(config, 'random', { label: 'Random' });
-    ctrl.addBinding(config, 'theme', {
-      label: 'Theme',
-      options: {
-        System: 'system',
-        Light: 'light',
-        Dark: 'dark',
-      },
-    });
-
-    ctrl.on('change', sync);
-    update();
-
     const defaultChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     const scrambleText = (text) => {
@@ -61,7 +27,7 @@ function Txt({
           scrambleText: {
             text,
             speed: 2,
-            chars: config.random ? defaultChars : text.replace(/\s/g, ''),
+            chars: defaultChars,
           },
         });
       }

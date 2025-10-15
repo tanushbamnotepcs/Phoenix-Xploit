@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 const orbitronFont = { fontFamily: "'Orbitron', sans-serif" };
 
 const navItems = [
-  { label: "Home", type: "hash", to: "landing" },
+  { label: "Home", type: "hash", to: "particle-canvas" },
   { label: "Activities", type: "hash", to: "activities" },
   { label: "Our Journey", type: "hash", to: "our-journey" },
-  { label: "Members", type: "route", to: "/our-team" },
+  { label: "Members", type: "hash", to: "our-team" },
 ];
 
 const Navbar = () => {
@@ -26,7 +26,13 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
-  const handleLogoClick = () => navigate("/");
+  const handleLogoClick = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: "particle-canvas" } });
+    } else {
+      scrollToId("particle-canvas");
+    }
+  };
 
   const scrollToId = (id) => {
     const el = document.getElementById(id);
