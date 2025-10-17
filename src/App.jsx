@@ -24,6 +24,7 @@ import TeamBatches from './pages/teamBatches';
 import ParticleDemo from './pages/ParticleDemo';
 import VideoMaskDemo from './pages/VideoMaskDemo';
 import VortexPage from './pages/VortexPage';
+import FullPageVortexDemo from './pages/FullPageVortexDemo';
 
 
 
@@ -67,6 +68,7 @@ const App = () => {
            <Route path="/particle-demo" element={<ParticleDemo />} /> {/* Added Particle Demo route */}
            <Route path="/video-mask-demo" element={<VideoMaskDemo />} /> {/* Added VideoMask Demo route */}
            <Route path="/vortex-demo" element={<VortexPage />} /> {/* Added Vortex Demo route */}
+           <Route path="/fullpage-vortex-demo" element={<FullPageVortexDemo />} /> {/* Added FullPage Vortex Demo route */}
         </Routes>
       </Router>
     </ThemeProvider>

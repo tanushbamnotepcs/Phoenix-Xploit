@@ -84,7 +84,7 @@ export function FigmaContactForm() {
     <div className="w-full max-w-6xl mx-auto">
       {/* Top heading */}
       <div className="text-center mb-14">
-        <h2 className="text-white/90 font-extrabold text-6xl md:text-7xl lg:text-[82px] leading-tight tracking-tighter mb-2 drop-shadow-[0_4px_32px_rgba(76,0,255,0.18)]">
+        <h2 className="font-extrabold text-6xl md:text-7xl lg:text-[82px] leading-tight tracking-tighter drop-shadow-[0_4px_32px_rgba(76,0,255,0.18)] mb-8 bg-gradient-to-r bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
           Get in touch
         </h2>
         <p className="text-white/70 text-lg md:text-xl lg:text-2xl tracking-tight">
@@ -95,22 +95,22 @@ export function FigmaContactForm() {
       {/* Contact form with cosmic background */}
       <div className="relative w-full">
         {/* Background elements */}
-        <div className="absolute top-[210px] left-[165px] w-[152px] h-[152px] rounded-full bg-[#A604F2] opacity-60 blur-[300px] pointer-events-none"></div>
-        <div className="absolute bottom-[67px] left-[179px] w-[152px] h-[152px] rounded-full bg-[#763AF5] opacity-70 blur-[300px] pointer-events-none"></div>
-        <div className="absolute top-[266px] right-[185px] w-[134px] h-[134px] rounded-full bg-[#763AF5] opacity-80 blur-[220px] pointer-events-none"></div>
+        <div className="absolute top-[210px] left-[165px] w-[152px] h-[152px] rounded-full "></div>
+        <div className="absolute bottom-[67px] left-[179px] w-[152px] h-[152px] rounded-full"></div>
+        <div className="absolute top-[266px] right-[185px] w-[134px] h-[134px] rounded-full"></div>
         {/* Subtle animated stars */}
         <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="animate-pulse absolute top-10 left-1/3 w-1 h-1 bg-cyan-300 rounded-full opacity-70"></div>
-          <div className="animate-pulse absolute bottom-10 right-1/4 w-1.5 h-1.5 bg-fuchsia-400 rounded-full opacity-60"></div>
+          <div className="animate-pulse absolute top-10 left-1/3 w-1 h- rounded-full opacity-70"></div>
+          <div className="animate-pulse absolute bottom-10 right-1/4 w-1.5 h-1.5 rounded-full opacity-60"></div>
           <div className="animate-pulse absolute top-1/2 left-1/2 w-1 h-1 bg-white rounded-full opacity-50"></div>
         </div>
         {/* Form container */}
-        <div className="relative w-full max-w-5xl mx-auto bg-white/[0.06] px-10 py-[40px] rounded-[22px] border border-[#0A0D17]/10 backdrop-blur-[380px] shadow-xl shadow-cyan-900/20 z-10">
+        <div className="relative w-full max-w-5xl mx-auto bg-white/3 px-10 py-[40px] rounded-[22px] border border-[#0A0D17]/10 z-10">
           <div className="space-y-10">
             {/* Form heading */}
             <div className="flex flex-col items-center justify-center text-center py-4">
               <h3 className="text-white font-semibold text-[28px] leading-tight tracking-tighter flex items-center justify-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-gradient-to-br from-cyan-400 to-fuchsia-500 animate-pulse"></span>
+                <span className="inline-block w-2 h-2 rounded-full bg-gradient-to-br  dark:from-blue-400 dark:to-purple-400 animate-pulse"></span>
                 Let&apos;s connect constellations
               </h3>
               <p className="text-white/80 text-base tracking-tight max-w-xl mx-auto mt-1">
@@ -133,7 +133,7 @@ export function FigmaContactForm() {
                           <Input
                             placeholder="First Name"
                             {...field}
-                            className="border-white/20 bg-white/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-2 focus:ring-cyan-400/40 transition-all"
+                            className="border-white/20 bg-black/10 text-white/80 h-11 text-[15px] placeholder:text-white/60 rounded-lg shadow-inner shadow-cyan-400/10 focus:ring-0.2 focus:ring-cyan-400/40 transition-all"
                           />
                         </FormControl>
                         <FormMessage />
@@ -216,8 +216,8 @@ export function FigmaContactForm() {
                 <Button
                   type="submit"
                   className={cn(
-                    "w-full flex items-center justify-center gap-2 text-white text-[15px] font-medium py-3 px-4 rounded-lg",
-                    "relative bg-gradient-to-r from-[#e10000] to-[#4400c2] hover:scale-105 hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300"
+                    "w-full flex items-center justify-center gap-2 text-black text-[15px] font-medium py-3 px-4 rounded-lg",
+                    "relative bg-gradient-to-r  dark:from-blue-400 dark:to-purple-400 hover:scale-105 hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300"
                   )}
                   style={{
                     boxShadow: "0 2px 24px 0 rgba(76,0,255,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.15)",

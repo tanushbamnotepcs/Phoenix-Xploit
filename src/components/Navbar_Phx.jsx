@@ -80,7 +80,7 @@ const Navbar = () => {
                 {navItems.map((item, idx) => (
                   <li key={idx}>
                     <button
-                      className="text-white/80 uppercase text-xs font-medium tracking-wide hover:text-blue-600 transition-colors"
+                      className="text-white/80 uppercase text-xs font-medium tracking-wide hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-colors"
                       onClick={() => handleNav(item)}
                     >
                       {item.label}
@@ -94,7 +94,7 @@ const Navbar = () => {
           {/* Contact Button */}
           <div className="hidden md:flex">
             <button
-              className="ml-4 px-4 py-2 border border-blue-900/30 rounded text-white uppercase text-sm font-semibold tracking-wide hover:text-blue-900 hover:border-blue-900 transition-all"
+              className="ml-4 px-4 py-2 border hover:bg-clip-text hover:text-transparent border-blue-900/30 rounded text-white uppercase text-sm font-semibold tracking-wide hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-all"
               onClick={() =>
                 window.location.pathname !== "/"
                   ? navigate("/", { state: { scrollTo: "contact" } })

@@ -1,7 +1,7 @@
 // components/TeamBatches.jsx
 import React from 'react';
 import Teamcard from '../components/ourTeam';
-import { StarsBG } from '../components/background/StarsBG';
+// import { StarsBG } from '../components/background/StarsBG';
 
 const teamData = {
   mentors: [
@@ -63,7 +63,7 @@ const TeamBatches = () => {
         {Object.entries(teamData).map(([categoryName, members]) => (
           <div key={categoryName} className="batch mb-12">
             <h2 className="text-3xl font-bold mb-4">{categoryName.toUpperCase()}</h2>
-            <div className="batch-row flex flex-wrap gap-6">
+            <div className="batch-row flex flex-wrap gap-10">
               {members.map((member, index) => (
                 <Teamcard key={index} {...member} />
               ))}

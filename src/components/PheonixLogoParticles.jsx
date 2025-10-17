@@ -178,7 +178,14 @@ const PheonixLogoParticles = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ display: "block", width: "100%", height: "90vh" }}
+      style={{ 
+        display: "block", 
+        width: "100%", 
+        height: "90vh",
+        position: "relative",
+        zIndex: 10,
+        backgroundColor: "black"
+      }}
       id="particle-canvas"
     />
   );

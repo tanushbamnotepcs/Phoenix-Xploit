@@ -100,12 +100,11 @@ export default function Carousel3D() {
                 <CardContent className="p-0 flex flex-col h-full w-full">
                   <div className="card-bg-wrapper h-full w-full relative overflow-hidden">
                     {/* Blur background layer */}
-                    <div className="blur-background"></div>
+                    <div className="blur-background "></div>
                     
                     {/* Background image */}
                     <div className={`absolute inset-0 rounded-full overflow-hidden shadow-lg transition-opacity duration-700 bg-image z-[10]`}>
-                      <div className="w-full h-full bg-cover bg-center rounded-full" 
-                           style={{ backgroundImage: "url('/images/1.png')" }}>
+                      <div className="w-full h-full bg-white/5 bg-cover bg-center rounded-full">
                       </div>
                     </div>
                     

@@ -8,12 +8,12 @@ const AboutUs = () => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="relative flex max-w-2xl w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden"
+      className="relative flex max-w-[1200px] w-full h-[300px] bg-white/3 backdrop-blur-xs rounded-2xl shadow-xl overflow-hidden"
     >
       {/* Accent bar */}
-      <div className="w-2 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-2xl" />
+      <div className="w-2 bg-gradient-to-r dark:from-blue-400 dark:to-purple-400 rounded-l-2xl" />
       <div className="flex-1 p-8 flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-cyan-400 font-heading">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent font-heading">
           About Us
         </h2>
         <blockquote className="italic text-white/80 mb-4 border-l-4 border-cyan-400 pl-4">
@@ -21,20 +21,18 @@ const AboutUs = () => (
         </blockquote>
         <p className="text-base md:text-lg text-white/90 leading-relaxed font-body">
           Phoenix CyberSecurity is a{" "}
-          <span className="text-yellow-300 font-semibold">
+          <span className="bg-gradient-to-r dark:from-yellow-400 dark:to-orange-300 bg-clip-text text-transparent font-semibold">
             student-led cybersecurity club
           </span>{" "}
           at SVPCET, dedicated to fostering a culture of cybersecurity awareness and
           excellence. We organize{" "}
-          <span className="text-cyan-300">workshops</span>,{" "}
-          <span className="text-cyan-300">CTF events</span>, and{" "}
-          <span className="text-cyan-300">training sessions</span> to help students
+          <span className="bg-gradient-to-r dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">workshops</span>,{" "}
+          <span className="bg-gradient-to-r dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">CTF events</span>, and{" "}
+          <span className="bg-gradient-to-r dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">training sessions</span> to help students
           develop practical skills in cybersecurity.
         </p>
-        <a
-          href="#contact"
-          className="mt-6 inline-block px-6 py-2 rounded bg-cyan-500 text-white font-semibold shadow hover:bg-cyan-400 transition"
-        >
+        <a href="#contact"
+          className="mt-9 px-6 py-2 rounded bg-gradient-to-r from-blue-400 to-purple-400 text-transparent">
           Join Us
         </a>
       </div>

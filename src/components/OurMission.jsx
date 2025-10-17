@@ -54,12 +54,12 @@ const Mission = () => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className="
-            group relative w-full max-w-[80vw] sm:max-w-[70vw] md:w-[340px] lg:w-[380px] xl:w-[420px]
-            min-h-[240px] md:min-h-[280px] 
-            border border-white/20 backdrop-blur-xl 
+            group relative w-full max-w-[120vw] sm:max-w-[105vw] md:w-[510px] lg:w-[570px] xl:w-[630px]
+            min-h-[300px] md:min-h-[340px] 
+            border border-blue-600/16 backdrop-blur-xs 
             transition-all duration-500 ease-out 
             flex flex-col justify-center cursor-pointer overflow-hidden 
-            bg-[rgba(19,19,21,0.8)] hover:bg-transparent
+            bg-white/1 backdrop-blur-xs rounded-2xl shadow-xl overflow-hidden
           "
           style={{
             transformStyle: 'preserve-3d',
@@ -113,7 +113,7 @@ const Mission = () => {
           {/* Card Content */}
           <div className="relative z-30 px-6 py-4 md:px-8 md:py-6 text-center">
             <motion.h2
-              className="text-white font-bold mb-4 leading-tight tracking-wide"
+              className="text-3xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400"
               style={{
                 fontSize: 'clamp(1.25rem, 3vw, 2rem)',
                 textShadow: '0 2px 20px rgba(192,192,192,0.2)',

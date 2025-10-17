@@ -57,7 +57,7 @@ const Footer = () => {
           style={{
             zIndex: 1,
             background:
-              "linear-gradient(135deg, rgba(255, 0, 80, 0.12), rgba(0, 110, 255, 0.12))",
+              "linear-gradient(135deg, rgba(150, 0, 0, 0.12), rgba(0, 80, 255, 0.12))",
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
           }}

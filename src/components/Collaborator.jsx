@@ -31,7 +31,7 @@ const Collaborators = () => {
 
       <section className="bg-transparent min-h-screen flex justify-center items-center px-4">
         <div className="flex flex-col items-center w-full max-w-7xl">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl text-[#ffff] mb-20 font-heading text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400 pb-15">
             Collaborations
           </h2>
 
@@ -45,10 +45,11 @@ const Collaborators = () => {
                   max-w-[55vw] sm:max-w-[55vw] md:w-[320px] lg:w-[400px] xl:w-[460px] 
                   aspect-[16/9] 
                   p-3 sm:p-4 
-                  bg-[rgba(19,19,21,0.43)] 
-                  border border-[rgba(0,0,0,0.51)] 
+                  bg-black/20
+                  border border-[rgba(35,105,255,0.4)]
                   backdrop-blur-[20px] 
                   rounded-2xl 
+
                   transition-all ease-in-out duration-300 
                   flex justify-center items-center text-center 
                   hover:shadow-[0_0_25px_5px_rgba(0,123,255,0.25)]
