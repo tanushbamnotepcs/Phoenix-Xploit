@@ -112,7 +112,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
     padding: 2rem;
     position: relative;
     backdrop-filter: none;
@@ -176,4 +175,15 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Lamp container spacing */
+.lamp-container {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }

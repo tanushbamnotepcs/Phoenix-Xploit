@@ -3,8 +3,9 @@ import "../css/dept.css";
 
 const DepartmentHeading = () => {
   return (
-    <div className="lamp-container relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-transparent w-full rounded-md z-0">
-      <div className="relative isolate z-0 flex w-full flex-1 scale-y-125 items-center justify-center">
+    <div className="lamp-container relative flex flex-col items-center justify-center w-full rounded-md z-0 py-16">
+      {/* Lamp Container */}
+      <div className="relative isolate z-0 flex w-full items-center justify-center min-h-[400px]">
         {/* Conic Gradient Left */}
         <div
           style={{
@@ -39,14 +40,15 @@ const DepartmentHeading = () => {
         <div className="animate-glowing-line absolute inset-auto z-50 h-0.5 w-60 -translate-y-28 bg-gradient-to-r from-blue-700 to-purple-700  "></div>
 
         <div className="absolute inset-auto z-40 h-30 w-full translate-y-[-12.5rem] bg-transparent"></div>
-      </div>
 
-      <div className="relative z-50 flex -translate-y-110 flex-col items-center px-5">
-        <h1 className="dept-heading">
-          <span className="college-name">St. Vincent Pallotti College of Engineering & Technology</span>
-          Department of Computer Science and Engineering<br />
-          <span>(Cyber Security)</span>
-        </h1>
+        {/* Department Heading */}
+        <div className="absolute inset-auto z-50 flex flex-col items-center px-5 translate-y-12">
+          <h1 className="dept-heading">
+            <span className="college-name">St. Vincent Pallotti College of Engineering & Technology</span>
+            Department of Computer Science and Engineering<br />
+            <span>(Cyber Security)</span>
+          </h1>
+        </div>
       </div>
     </div>
   );

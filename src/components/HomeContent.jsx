@@ -56,15 +56,15 @@ const HomeContent = () => (
 				</div>
 				<SectionSpacer size="medium" />
 				<div id="contact" className="w-full">
-					<FigmaContactForm />
-				</div>
-				<SectionSpacer size="medium" />
-				<div id="our-journey" className="w-full">
 					<Activities />
 				</div>
 				<SectionSpacer size="medium" />
+				<div id="our-journey" className="w-full">
+				<Achievements />
+				</div>
+				<SectionSpacer size="medium" />
 				<div id="achievements" className="w-full pb-32">
-					<Achievements />
+				<FigmaContactForm />
 				</div>
 				
 				<Footer />
