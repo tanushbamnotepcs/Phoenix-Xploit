@@ -23,6 +23,7 @@ const Teamcard = ({ image, name, hackerName, description, domain, linkedin, twit
           </div>
         </div>
       </div>
+      
       <div className="txt-wrapper">
         <Txt
           name={name}
