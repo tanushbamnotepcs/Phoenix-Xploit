@@ -102,8 +102,8 @@ export const Activities = ({ className, slides = slidesData }) => {
 
   return (
     <section className="bg-transparent min-h-screen flex flex-col justify-center items-center px-4 py-16 sm:py-20">
-      <div className="text-3xl md:text-5xl font-bold text-center mb-8 text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
-         <h2 className="text-4xl sm:text-5xl md:text-6xl mb-20 font-heading text-center">
+      <div className="text-4xl md:text-5xl font-extrabold text-center mb-8 text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+         <h2 className="mb-20">
         Activities
       </h2>
       </div>

@@ -33,7 +33,7 @@ const HomeContent = () => (
 				<SectionSpacer size="medium" />
 				<div id="our-team" className="w-full px-4">
 					<div className="max-w-full mx-auto">
-						<h2 className="text-3xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">Our Team</h2>
+						<h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">Our Team</h2>
 						<div className="space-y-12">
 							{Object.entries(teamData).map(([categoryName, members]) => (
 								<div key={categoryName} className="batch">

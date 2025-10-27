@@ -86,7 +86,13 @@ export default function Carousel3D() {
   }, [carousel])
 
   return (
+    <div className="text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-gradient-to-r bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">Our Domains
+      </h2>
+      
     <div className="wrapper">
+      
+      
       <div className="scene">
         <div className="carousel keen-slider" ref={sliderRef}>
           {cardsData.map((card, index) => (
@@ -131,6 +137,7 @@ export default function Carousel3D() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }

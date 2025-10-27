@@ -64,6 +64,9 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
 const TimelineItem = React.memo(({ item, index, variants, cardVariants }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  // Alternate between left and right: even indices on left, odd indices on right
+  const isLeft = index % 2 === 0;
 
   return (
     <motion.div
@@ -73,22 +76,27 @@ const TimelineItem = React.memo(({ item, index, variants, cardVariants }) => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      {/* Left side content */}
-      <div className="w-1/2 pr-24 text-right">
-        <motion.div 
-          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
-          variants={cardVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <h3 className="mb-4 text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
-            {item.title}
-          </h3>
-          <div className="text-neutral-700 dark:text-neutral-300 space-y-4">
-            {item.content}
-          </div>
-        </motion.div>
-      </div>
+      {/* Left side content - only show for even indices */}
+      {isLeft && (
+        <div className="w-1/2 pr-24 text-right">
+          <motion.div 
+            className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <h3 className="mb-4 text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
+              {item.title}
+            </h3>
+            <div className="text-neutral-700 dark:text-neutral-300 space-y-4">
+              {item.content}
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Empty div for right side when card is on left */}
+      {isLeft && <div className="w-1/2 pl-24"></div>}
 
       {/* Timeline dot */}
       <motion.div 
@@ -100,22 +108,27 @@ const TimelineItem = React.memo(({ item, index, variants, cardVariants }) => {
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-purple-500/50 ring-2 ring-white/20 dark:ring-neutral-800/20" />
       </motion.div>
 
-      {/* Right side content */}
-      <div className="w-1/2 pl-24">
-        <motion.div 
-          className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
-          variants={cardVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <h3 className="mb-4 text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
-            {item.title}
-          </h3>
-          <div className="text-neutral-700 dark:text-neutral-300 space-y-4">
-            {item.content}
-          </div>
-        </motion.div>
-      </div>
+      {/* Empty div for left side when card is on right */}
+      {!isLeft && <div className="w-1/2 pr-24"></div>}
+
+      {/* Right side content - only show for odd indices */}
+      {!isLeft && (
+        <div className="w-1/2 pl-24">
+          <motion.div 
+            className="rounded-xl border border-neutral-200/50 bg-white/80 backdrop-blur-sm p-6 shadow-xl dark:border-neutral-700/50 dark:bg-transparent"
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <h3 className="mb-4 text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
+              {item.title}
+            </h3>
+            <div className="text-neutral-700 dark:text-neutral-300 space-y-4">
+              {item.content}
+            </div>
+          </motion.div>
+        </div>
+      )}
     </motion.div>
   );
 });

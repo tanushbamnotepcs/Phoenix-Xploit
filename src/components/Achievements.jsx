@@ -18,7 +18,7 @@ const Achievements = () => {
       {/* Pulsing cyber background */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(40,40,255,0.15),rgba(255,0,72,0.1),transparent_70%)] animate-pulse"></div>
 
-      <h1 className="text-4xl md:text-5xl font-semibold text-center mb-12 tracking-wide">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-wide text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
         Achievements
       </h1>
 

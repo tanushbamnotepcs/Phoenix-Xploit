@@ -31,7 +31,7 @@ const Collaborators = () => {
 
       <section className="bg-transparent min-h-screen flex justify-center items-center px-4">
         <div className="flex flex-col items-center w-full max-w-7xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400 pb-15">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400 pb-15">
             Collaborations
           </h2>
 

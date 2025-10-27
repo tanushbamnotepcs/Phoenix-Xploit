@@ -84,12 +84,9 @@ export function FigmaContactForm() {
     <div className="w-full max-w-6xl mx-auto">
       {/* Top heading */}
       <div className="text-center mb-14">
-        <h2 className="font-extrabold text-6xl md:text-7xl lg:text-[82px] leading-tight tracking-tighter drop-shadow-[0_4px_32px_rgba(76,0,255,0.18)] mb-8 bg-gradient-to-r bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
+        <h3 className="font-extrabold text-4xl md:text-5xl leading-tight tracking-tighter drop-shadow-[0_4px_32px_rgba(76,0,255,0.18)] mb-8 bg-gradient-to-r bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400">
           Get in touch
-        </h2>
-        <p className="text-white/70 text-lg md:text-xl lg:text-2xl tracking-tight">
-          Reach out, and let&apos;s create a universe of possibilities together!
-        </p>
+        </h3>
       </div>
 
       {/* Contact form with cosmic background */}
